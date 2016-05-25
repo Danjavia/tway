@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
+import { LoginComponent } from './+login';
+import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 
 @Component({
     moduleId: module.id,
     selector: 'tway-app',
     templateUrl: 'tway.component.html',
-    styleUrls: ['tway.component.css']
+    styleUrls: ['tway.component.css'],
+  directives: [ROUTER_DIRECTIVES],
+  providers: [ROUTER_PROVIDERS]
 })
+@Routes([
+  {path: '/login', component: LoginComponent}
+])
 export class TwayAppComponent {
 
     public title:string
